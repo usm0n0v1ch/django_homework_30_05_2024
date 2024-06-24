@@ -1,0 +1,12 @@
+{% extends 'posts_app/base.html' %}
+
+{% block title %}Добавление комментария{% endblock %}
+
+{% block content %}
+    <h1>Добавление комментария</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+{% endblock %}

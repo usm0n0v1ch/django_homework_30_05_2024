@@ -1,0 +1,27 @@
+
+
+{% extends 'posts_app/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<a href=" {% url 'category' %}">Категории</a>
+<a href="{% url 'add_post' %}">Добавить пост</a>
+<p>Название: {{ post.title }}</p>
+<p>Контент: {{ post.content }}</p>
+<p>Категория: {{ post.category }}</p>
+<p>Комментарии:
+    {% for comment in comments %}
+    {{ comment.author }}--------{{ comment.content }}------{{ comment.published }}
+    {% endfor %}
+</p>
+
+<a href="{% url 'add_comment' pk=post.pk %}">Добавить комментарий</a>
+<a href="{% url 'home' %}">Назад</a>
+
+{% endblock %}
+
+
+
+
+

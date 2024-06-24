@@ -1,0 +1,14 @@
+
+{% extends 'posts_app/base.html' %}
+
+{% block title %}Добавление категории{% endblock %}
+
+{% block content %}
+    <h1>Добавление категории</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock %}
+
